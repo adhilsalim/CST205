@@ -8,9 +8,7 @@ public class calculator implements ActionListener {
             btnDivide, btnEquals, btnDelete, btnClear;
 
     // Variables
-    static int btnPaddingX = 10;
-    static int btnPaddingY = 10;
-    static double variableOne = 0, variableTwo = 0, result = 0;
+    static double variable = 0, result = 0;
     static String sResult = "";
     static int operationNumber = -1;
 
@@ -150,27 +148,27 @@ public class calculator implements ActionListener {
                 textBox.setText(textBox.getText().concat("."));
             } else if (e.getSource() == btnAdd) {
 
-                clearTextBox();
                 operationNumber = 1;
-                variableOne = Double.parseDouble(textBox.getText());
+                variable = Double.parseDouble(textBox.getText());
+                clearTextBox();
 
             } else if (e.getSource() == btnSubtract) {
 
-                clearTextBox();
                 operationNumber = 2;
-                variableOne = Double.parseDouble(textBox.getText());
+                variable = Double.parseDouble(textBox.getText());
+                clearTextBox();
 
             } else if (e.getSource() == btnMultiply) {
 
-                clearTextBox();
                 operationNumber = 3;
-                variableOne = Double.parseDouble(textBox.getText());
+                variable = Double.parseDouble(textBox.getText());
+                clearTextBox();
 
             } else if (e.getSource() == btnDivide) {
 
-                clearTextBox();
                 operationNumber = 4;
-                variableOne = Double.parseDouble(textBox.getText());
+                variable = Double.parseDouble(textBox.getText());
+                clearTextBox();
 
             } else if (e.getSource() == btnDelete) {
 
@@ -188,20 +186,23 @@ public class calculator implements ActionListener {
 
             } else if (e.getSource() == btnEquals) {
 
+                // System.out.println("varOne: " + variable);
+                // System.out.println("varTwo: " + Double.parseDouble(textBox.getText()));
+                // System.out.println("operationNumber: " + operationNumber);
+
                 if (operationNumber == 1) {
-                    result = Double.parseDouble(textBox.getText()) + variableOne;
+                    result = variable + Double.parseDouble(textBox.getText());
                 }
                 if (operationNumber == 2) {
-                    result = Double.parseDouble(textBox.getText()) - variableOne;
+                    result = variable - Double.parseDouble(textBox.getText());
                 }
                 if (operationNumber == 3) {
-                    result = Double.parseDouble(textBox.getText()) * variableOne;
+                    result = variable * Double.parseDouble(textBox.getText());
                 }
                 if (operationNumber == 4) {
-                    result = Double.parseDouble(textBox.getText()) / variableOne;
+                    result = variable / Double.parseDouble(textBox.getText());
                 }
-                // sResult = (String)(result);
-                // textBox.setText(result);
+                textBox.setText("" + result);
             }
         } catch (Exception err) {
         }
@@ -215,4 +216,3 @@ public class calculator implements ActionListener {
         new calculator();
     }
 }
-// 350-500
