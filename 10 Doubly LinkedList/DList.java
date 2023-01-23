@@ -12,7 +12,7 @@ class DList {
         while (true) {
             System.out.print("\nSelect an operation: \n");
             System.out.print(
-                    "\n1.Add element to List" +
+                            "\n1.Add element to List" +
                             "\n2.Delete from front" +
                             "\n3.Delete from end" +
                             "\n4.Delete from a position" +
