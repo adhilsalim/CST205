@@ -22,11 +22,6 @@ public class switchColor extends JPanel implements ActionListener {
         green.setBounds(0, 100, 100, 50);
         green.addActionListener(this);
 
-        // ButtonGroup group = new ButtonGroup();
-        // group.add(red);
-        // group.add(yellow);
-        // group.add(green);
-
         add(red);
         add(yellow);
         add(green);
