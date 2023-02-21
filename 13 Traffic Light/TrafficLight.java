@@ -4,13 +4,19 @@ import java.awt.event.*;
 
 public class TrafficLight extends JPanel implements ActionListener {
 
+    // creating radio buttons
     JRadioButton red, yellow, green;
-    Color c_red, c_yellow, c_green;
 
-    TrafficLight() {
+    // creating colors for lights
+    Color stopLightColor, waitLightColor, goLightColor;
 
+    public TrafficLight() {
+
+        // setting bounds for the panel (the area to draw on)
         setBounds(0, 0, 400, 400);
 
+        // creating radio buttons, naming them, setting bounds and adding action
+        // listener
         red = new JRadioButton("Red");
         red.setBounds(0, 0, 100, 50);
         red.addActionListener(this);
@@ -23,38 +29,42 @@ public class TrafficLight extends JPanel implements ActionListener {
         green.setBounds(0, 100, 100, 50);
         green.addActionListener(this);
 
-        red.setSelected(true);
-        c_red = Color.red;
-        c_yellow = Color.black;
-        c_green = Color.black;
+        // DEFAULT
+        red.setSelected(true); // setting red radio button as selected by default
+        stopLightColor = Color.red; // setting red light as red by default
+        waitLightColor = Color.black; // setting yellow light as black by default
+        goLightColor = Color.black; // setting green light as black by default
 
+        // creating a group of radio buttons
         ButtonGroup group = new ButtonGroup();
         group.add(red);
         group.add(yellow);
         group.add(green);
 
-        add(green);
-        add(yellow);
+        // adding radio buttons to the panel
         add(red);
-
+        add(yellow);
+        add(green);
     }
+
+    
 
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == red) {
-            c_red = Color.red;
-            c_yellow = Color.black;
-            c_green = Color.black;
+            stopLightColor = Color.red;
+            waitLightColor = Color.black;
+            goLightColor = Color.black;
         }
         if (e.getSource() == yellow) {
-            c_red = Color.black;
-            c_yellow = Color.yellow;
-            c_green = Color.black;
+            stopLightColor = Color.black;
+            waitLightColor = Color.yellow;
+            goLightColor = Color.black;
         }
         if (e.getSource() == green) {
-            c_red = Color.black;
-            c_yellow = Color.black;
-            c_green = Color.green;
+            stopLightColor = Color.black;
+            waitLightColor = Color.black;
+            goLightColor = Color.green;
         }
         repaint();
     }
@@ -63,20 +73,32 @@ public class TrafficLight extends JPanel implements ActionListener {
 
         super.paintComponent(g);
 
-        g.drawRect(40, 30, 70, 190);
+        // creating yellow box
+        g.setColor(Color.yellow);
+        g.drawRect(35, 20, 80, 205);
+        g.fillRect(35, 20, 80, 205);
+
+        // creating black box
         g.setColor(Color.black);
+        g.drawRect(40, 30, 70, 190);
         g.fillRect(40, 30, 70, 190);
 
+        // creating red light
+        g.setColor(Color.black); // for the outline
         g.drawOval(50, 50, 50, 50);
-        g.setColor(c_red);
+        g.setColor(stopLightColor);
         g.fillOval(50, 50, 50, 50);
 
+        // creating yellow light
+        g.setColor(Color.black); // for the outline
         g.drawOval(50, 100, 50, 50);
-        g.setColor(c_yellow);
+        g.setColor(waitLightColor);
         g.fillOval(50, 100, 50, 50);
 
+        // creating green light
+        g.setColor(Color.black); // for the outline
         g.drawOval(50, 150, 50, 50);
-        g.setColor(c_green);
+        g.setColor(goLightColor);
         g.fillOval(50, 150, 50, 50);
 
     }
