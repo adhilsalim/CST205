@@ -49,11 +49,13 @@ public class ConvertTemperature implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == textBoxOne && textBoxOne.getText() == "enter temperature in Celsius") {
+        if (e.getSource() == textBoxOne && (textBoxOne.getText() == "enter temperature in Celsius"
+                || textBoxOne.getText() == "Please enter a value")) {
             textBoxOne.setText("");
             textBoxTwo.setText("");
         }
-        if (e.getSource() == textBoxTwo && textBoxTwo.getText() == "enter temperature in Fahrenheit") {
+        if (e.getSource() == textBoxTwo && (textBoxTwo.getText() == "enter temperature in Fahrenheit"
+                || textBoxTwo.getText() == "Please enter a value")) {
             textBoxOne.setText("");
             textBoxTwo.setText("");
         }
