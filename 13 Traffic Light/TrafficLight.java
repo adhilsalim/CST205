@@ -38,6 +38,7 @@ public class TrafficLight extends JPanel implements ActionListener {
         // panel.add(red);
         // panel.add(yellow);
         // panel.add(green);
+
         add(green);
         add(yellow);
         add(red);
@@ -45,6 +46,39 @@ public class TrafficLight extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == red) {
+            c_red = Color.red;
+            c_yellow = Color.black;
+            c_green = Color.black;
+        }
+        if (e.getSource() == yellow) {
+            c_red = Color.black;
+            c_yellow = Color.yellow;
+            c_green = Color.black;
+        }
+        if (e.getSource() == green) {
+            c_red = Color.black;
+            c_yellow = Color.black;
+            c_green = Color.green;
+        }
+        repaint();
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        g.drawOval(50, 50, 50, 50);
+        g.drawOval(50, 100, 50, 50);
+        g.drawOval(50, 150, 50, 50);
+
+        g.setColor(c_red);
+        g.fillOval(100, 50, 100, 100);
+
+        g.setColor(c_yellow);
+        g.fillOval(100, 100, 100, 100);
+
+        g.setColor(c_green);
+        g.fillOval(100, 150, 100, 100);
 
     }
 
