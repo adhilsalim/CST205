@@ -186,10 +186,6 @@ public class calculator implements ActionListener {
 
             } else if (e.getSource() == btnEquals) {
 
-                // System.out.println("varOne: " + variable);
-                // System.out.println("varTwo: " + Double.parseDouble(textBox.getText()));
-                // System.out.println("operationNumber: " + operationNumber);
-
                 if (operationNumber == 1) {
                     result = variable + Double.parseDouble(textBox.getText());
                 }
