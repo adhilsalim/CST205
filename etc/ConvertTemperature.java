@@ -63,11 +63,20 @@ public class ConvertTemperature implements ActionListener {
         if (e.getSource() == btnC) {
             if (textBoxOne.getText() == "") {
                 textBoxTwo.setText("Please enter a value");
-            } else {
+            } else if (isNumberic(celcius)) {
                 celcius = textBoxOne.getText();
                 fahrenheit = String.valueOf((Double.parseDouble(celcius) * 9 / 5) + 32);
                 textBoxTwo.setText(fahrenheit);
             }
+        }
+    }
+
+    public static Boolean isNumberic(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 
