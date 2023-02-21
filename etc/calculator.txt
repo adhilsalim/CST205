@@ -1,0 +1,19 @@
+[1] import the following packages
+    import javax.swing.*;
+    import java.awt.event.*;
+[2] create a class which implements ActionListener
+[3] create reference objects for the following components
+    JFrame
+    JTextField
+    JButton
+[4] create static Variables
+[5] create constructor of the class
+[6] create objects using new keyword
+[7] set bounds for all the components
+[8] addActionListener to all the components except JTextField
+[9] add components to the frame using add method
+[10] setLayout, setVisible, setSize, setDefaultCloseOperation for frame
+[11] create a method actionPerformed with ActionEvent
+[12] use e.getSource() to get the source of the event
+[13] create main method
+[14] use new calculator() 
