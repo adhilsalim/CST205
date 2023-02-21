@@ -53,13 +53,11 @@ public class TrafficLight extends JPanel implements ActionListener {
             stopLightColor = Color.red;
             waitLightColor = Color.black;
             goLightColor = Color.black;
-        }
-        else if (e.getSource() == yellow) {
+        } else if (e.getSource() == yellow) {
             stopLightColor = Color.black;
             waitLightColor = Color.yellow;
             goLightColor = Color.black;
-        }
-        else if (e.getSource() == green) {
+        } else if (e.getSource() == green) {
             stopLightColor = Color.black;
             waitLightColor = Color.black;
             goLightColor = Color.green;
@@ -102,9 +100,8 @@ public class TrafficLight extends JPanel implements ActionListener {
 
     }
 
-    
-    public static void main(String[] args)
-    {JFrame frame = new JFrame("Traffic Light");    
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Traffic Light");
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setSize(400, 400);
