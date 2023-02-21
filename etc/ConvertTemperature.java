@@ -50,28 +50,39 @@ public class ConvertTemperature implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == btnC) {
+
             if (textBoxOne.getText() == "") {
+
                 textBoxOne.setText("Please enter a value");
+
             } else if (isNumberic(textBoxOne.getText())) {
+
                 celcius = textBoxOne.getText();
                 fahrenheit = String.valueOf((Double.parseDouble(celcius) * 9 / 5) + 32);
-                textBoxTwo.setText(fahrenheit);
+                textBoxTwo.setText(celcius + " in F = " + fahrenheit);
+
             } else {
                 textBoxOne.setText("Please enter a value");
             }
+
         }
 
         if (e.getSource() == btnF) {
+
             if (textBoxTwo.getText() == "") {
+
                 textBoxTwo.setText("Please enter a value");
 
             } else if (isNumberic(textBoxTwo.getText())) {
+
                 fahrenheit = textBoxOne.getText();
                 celcius = String.valueOf((Double.parseDouble(fahrenheit) - 32) * 5 / 9);
-                textBoxOne.setText(celcius);
+                textBoxOne.setText(fahrenheit + " in C = " + celcius);
+
             } else {
                 textBoxTwo.setText("Please enter a value");
             }
+
         }
     }
 
