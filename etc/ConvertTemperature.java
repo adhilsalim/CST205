@@ -19,14 +19,14 @@ public class ConvertTemperature implements ActionListener {
         frame = new JFrame("Convert Temperature");
         textBoxOne = new JTextField("enter temperature in Celsius");
         textBoxTwo = new JTextField("enter temperature in Fahrenheit");
-        btnF = new JButton("Convert to Fahrenheit");
-        btnC = new JButton("Convert to Celsius");
+        btnF = new JButton("to F");
+        btnC = new JButton("to C");
 
         // Setting bounds
-        textBoxOne.setBounds(50, 50, 200, 50);
-        textBoxTwo.setBounds(50, 80, 200, 50);
-        btnF.setBounds(50, 110, 100, 20);
-        btnC.setBounds(50, 140, 100, 20);
+        textBoxOne.setBounds(50, 50, 200, 35);
+        textBoxTwo.setBounds(50, 100, 200, 35);
+        btnF.setBounds(60, 150, 80, 50);
+        btnC.setBounds(150, 150, 80, 50);
 
         // Adding components to frame
         frame.add(textBoxOne);
@@ -41,11 +41,21 @@ public class ConvertTemperature implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Adding action listeners
+        textBoxOne.addActionListener(this);
+        textBoxTwo.addActionListener(this);
         btnC.addActionListener(this);
         btnF.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == textBoxOne && textBoxOne.getText() == "enter temperature in Celsius") {
+            textBoxTwo.setText("");
+        }
+        if (e.getSource() == textBoxTwo) {
+
+        }
+
         if (e.getSource() == btnC) {
             if (textBoxOne.getText() == "") {
                 textBoxTwo.setText("Please enter a value");
