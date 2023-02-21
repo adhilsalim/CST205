@@ -11,7 +11,7 @@ class myThread implements Runnable {
     }
 }
 
-public class multithreading {
+public class SyncThread {
     public static void main(String[] args) throws Exception {
         myThread mt = new myThread();
 
