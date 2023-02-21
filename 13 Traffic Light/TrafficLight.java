@@ -10,7 +10,7 @@ public class TrafficLight extends JPanel implements ActionListener {
     // creating colors for lights
     Color stopLightColor, waitLightColor, goLightColor;
 
-    public TrafficLight() {
+    TrafficLight() {
 
         // setting bounds for the panel (the area to draw on)
         setBounds(0, 0, 400, 400);
@@ -47,8 +47,6 @@ public class TrafficLight extends JPanel implements ActionListener {
         add(green);
     }
 
-    
-
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == red) {
@@ -56,16 +54,17 @@ public class TrafficLight extends JPanel implements ActionListener {
             waitLightColor = Color.black;
             goLightColor = Color.black;
         }
-        if (e.getSource() == yellow) {
+        else if (e.getSource() == yellow) {
             stopLightColor = Color.black;
             waitLightColor = Color.yellow;
             goLightColor = Color.black;
         }
-        if (e.getSource() == green) {
+        else if (e.getSource() == green) {
             stopLightColor = Color.black;
             waitLightColor = Color.black;
             goLightColor = Color.green;
         }
+
         repaint();
     }
 
@@ -103,8 +102,9 @@ public class TrafficLight extends JPanel implements ActionListener {
 
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Traffic Light");
+    
+    public static void main(String[] args)
+    {JFrame frame = new JFrame("Traffic Light");    
         frame.setLayout(null);
         frame.setVisible(true);
         frame.setSize(400, 400);
@@ -112,5 +112,6 @@ public class TrafficLight extends JPanel implements ActionListener {
 
         TrafficLight trafficLight = new TrafficLight();
         frame.add(trafficLight);
+
     }
 }
