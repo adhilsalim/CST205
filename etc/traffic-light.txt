@@ -1,0 +1,52 @@
+[1] import the following packages
+    import javax.swing.*;
+    import java.awt.*;
+    import java.awt.event.*;
+
+[2] create a class which extends JPanel and implements ActionListener
+
+[3] create object references for radio button and color
+
+[4] create a constructor
+
+[5] inside constructor set bounds for JPanel
+
+[6] create radio buttons with name, bounds, and addActionListener
+
+[7] set radio button selection using setSelected() method as default
+
+[8] set default color using Color.colorName
+
+[9] create a ButtonGroup object and add all radio buttons using add() method
+
+[10] add radio buttons to the panel using add() method
+
+[11] create actionPerformed method with ActionEvent object
+
+[12] inside actionPerformed method use if case to check which radio button is selected
+
+[13] either use radioButtonObject.isSelected() or use e.getSource() == radioButtonObject
+
+[14] change color object's color using color.colorName
+
+[15] repaint the panel using repaint() method
+
+[16] create a paintComponent method with Graphics object
+
+[17] inside paintComponent method use super.paintComponent(g) method
+
+[18] use g.setColor(colorObject) method to set color for the brush
+
+[19] use g.fillRect(x, y, width, height) method to draw a rectangle (also fillOval() method to draw a circle)
+S
+[20] use drawRect and drawOval methods to draw a rectangle and circle
+
+[21] create a main method
+
+[22] create a JFrame object and set its properties
+
+[23] create an object of the class which extends JPanel and implements ActionListener
+
+[24] add the object to the JFrame using add() method
+
+[25] set JFrame visible using setVisible() method
