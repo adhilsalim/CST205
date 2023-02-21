@@ -50,10 +50,12 @@ public class ConvertTemperature implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == textBoxOne && textBoxOne.getText() == "enter temperature in Celsius") {
+            textBoxOne.setText("");
             textBoxTwo.setText("");
         }
-        if (e.getSource() == textBoxTwo) {
-
+        if (e.getSource() == textBoxTwo && textBoxTwo.getText() == "enter temperature in Fahrenheit") {
+            textBoxOne.setText("");
+            textBoxTwo.setText("");
         }
 
         if (e.getSource() == btnC) {
