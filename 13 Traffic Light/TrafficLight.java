@@ -4,14 +4,12 @@ import java.awt.event.*;
 
 public class TrafficLight extends JPanel implements ActionListener {
 
-    // JPanel panel;
     JRadioButton red, yellow, green;
     Color c_red, c_yellow, c_green;
 
     TrafficLight() {
-        // panel = new JPanel();
-        // panel.setBounds(0, 0, 200, 200);
-        setBounds(0, 0, 200, 200);
+
+        setBounds(0, 0, 400, 400);
 
         red = new JRadioButton("Red");
         red.setBounds(0, 0, 100, 50);
@@ -28,16 +26,12 @@ public class TrafficLight extends JPanel implements ActionListener {
         red.setSelected(true);
         c_red = Color.red;
         c_yellow = Color.black;
-        c_green = Color.green;
+        c_green = Color.black;
 
         ButtonGroup group = new ButtonGroup();
         group.add(red);
         group.add(yellow);
         group.add(green);
-
-        // panel.add(red);
-        // panel.add(yellow);
-        // panel.add(green);
 
         add(green);
         add(yellow);
@@ -46,6 +40,7 @@ public class TrafficLight extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+
         if (e.getSource() == red) {
             c_red = Color.red;
             c_yellow = Color.black;
@@ -65,24 +60,35 @@ public class TrafficLight extends JPanel implements ActionListener {
     }
 
     public void paintComponent(Graphics g) {
+
         super.paintComponent(g);
 
+        g.drawRect(40, 30, 70, 190);
+        g.setColor(Color.black);
+        g.fillRect(40, 30, 70, 190);
+
         g.drawOval(50, 50, 50, 50);
-        g.drawOval(50, 100, 50, 50);
-        g.drawOval(50, 150, 50, 50);
-
         g.setColor(c_red);
-        g.fillOval(100, 50, 100, 100);
+        g.fillOval(50, 50, 50, 50);
 
+        g.drawOval(50, 100, 50, 50);
         g.setColor(c_yellow);
-        g.fillOval(100, 100, 100, 100);
+        g.fillOval(50, 100, 50, 50);
 
+        g.drawOval(50, 150, 50, 50);
         g.setColor(c_green);
-        g.fillOval(100, 150, 100, 100);
+        g.fillOval(50, 150, 50, 50);
 
     }
 
     public static void main(String[] args) {
-        new TrafficLight();
+        JFrame frame = new JFrame("Traffic Light");
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setSize(400, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        TrafficLight trafficLight = new TrafficLight();
+        frame.add(trafficLight);
     }
 }
