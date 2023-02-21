@@ -19,8 +19,8 @@ public class ConvertTemperature implements ActionListener {
         frame = new JFrame("Convert Temperature");
         textBoxOne = new JTextField("enter temperature in Celsius");
         textBoxTwo = new JTextField("enter temperature in Fahrenheit");
-        btnF = new JButton("to F");
-        btnC = new JButton("to C");
+        btnF = new JButton("to C");
+        btnC = new JButton("to F");
 
         // Setting bounds
         textBoxOne.setBounds(50, 50, 200, 35);
@@ -49,17 +49,13 @@ public class ConvertTemperature implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == btnC) {
+        if (e.getSource() == btnC) { // CONVERT TO FAHRENHEIT
 
-            if (textBoxOne.getText() == "") {
-
-                textBoxOne.setText("Please enter a value");
-
-            } else if (isNumberic(textBoxOne.getText())) {
+            if (isNumberic(textBoxOne.getText())) {
 
                 celcius = textBoxOne.getText();
                 fahrenheit = String.valueOf((Double.parseDouble(celcius) * 9 / 5) + 32);
-                textBoxTwo.setText(celcius + " in F = " + fahrenheit);
+                textBoxTwo.setText(celcius + "C in F = " + fahrenheit);
 
             } else {
                 textBoxOne.setText("Please enter a value");
@@ -67,17 +63,12 @@ public class ConvertTemperature implements ActionListener {
 
         }
 
-        if (e.getSource() == btnF) {
+        if (e.getSource() == btnF) { // CONVERT TO CELCIUS
 
-            if (textBoxTwo.getText() == "") {
-
-                textBoxTwo.setText("Please enter a value");
-
-            } else if (isNumberic(textBoxTwo.getText())) {
-
+            if (isNumberic(textBoxTwo.getText())) {
                 fahrenheit = textBoxOne.getText();
                 celcius = String.valueOf((Double.parseDouble(fahrenheit) - 32) * 5 / 9);
-                textBoxOne.setText(fahrenheit + " in C = " + celcius);
+                textBoxOne.setText(fahrenheit + "F in C = " + celcius);
 
             } else {
                 textBoxTwo.setText("Please enter a value");
@@ -88,6 +79,8 @@ public class ConvertTemperature implements ActionListener {
 
     public static Boolean isNumberic(String str) {
         try {
+            if (str == null || str.equals(""))
+                return false;
             Double.parseDouble(str);
             return true;
         } catch (NumberFormatException e) {
