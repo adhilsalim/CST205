@@ -151,9 +151,11 @@ public class MovieManagement {
 
     // DELETE MOVIE BASED ON MOVIE ID
     public void deleteMovie(int movieId) {
-        for (MovieDetails md : movieList) {
+        Iterator<MovieDetails> itr = movieList.iterator();
+        while (itr.hasNext()) {
+            MovieDetails md = itr.next();
             if (md.movieId == movieId) {
-                movieList.remove(md);
+                itr.remove();
             }
         }
     }
