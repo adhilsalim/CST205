@@ -27,7 +27,7 @@ public class ChangeText implements ActionListener {
         label.setBounds(10, 10, 400, 200);
         textBox.setBounds(10, 410, 200, 30);
         upperCase.setBounds(10, 450, 120, 30);
-        lowerCase.setBounds(120, 450, 120, 30);
+        lowerCase.setBounds(140, 450, 120, 30);
         button.setBounds(10, 490, 60, 45);
 
         frame.add(label);
@@ -37,6 +37,7 @@ public class ChangeText implements ActionListener {
         frame.add(button);
 
         ButtonGroup group = new ButtonGroup();
+        upperCase.setSelected(true);
         group.add(upperCase);
         group.add(lowerCase);
 
