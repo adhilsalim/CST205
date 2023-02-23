@@ -181,9 +181,11 @@ public class MovieManagement {
 
     // DELETE THEATRE BASED ON THEATRE ID
     public void deleteTheatre(int theatreId) {
-        for (TheatreDetails td : theatreList) {
+        Iterator<TheatreDetails> itr = theatreList.iterator();
+        while (itr.hasNext()) {
+            TheatreDetails td = itr.next();
             if (td.theatreId == theatreId) {
-                theatreList.remove(td);
+                itr.remove();
             }
         }
     }
@@ -198,6 +200,7 @@ public class MovieManagement {
             for (String cast : md.cast) {
                 if (cast.equals(castName)) {
                     System.out.println("MOVIE NAME : " + md.movieName);
+                    break;
                 }
             }
         }
@@ -217,9 +220,7 @@ public class MovieManagement {
                     for (TheatreDetails td : theatreList) {
                         for (Integer movie : td.movie) {
                             if (movie == md.movieId) {
-                                System.out.println("THEATRE ID : " + td.theatreId);
                                 System.out.println("THEATRE NAME : " + td.theatreName);
-                                System.out.println("THEATRE MOVIE : " + Arrays.toString(td.movie));
                             }
                         }
                     }
