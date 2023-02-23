@@ -10,8 +10,6 @@ public class FileAppend {
         FileInputStream readFile;
         FileOutputStream writeFile;
 
-        String tempOne = "", tempTwo = "";
-
         System.out.println("Enter the name of the file to read [excluding extension]: ");
         String fileToRead = scan.nextLine();
 
@@ -21,11 +19,12 @@ public class FileAppend {
         scan.close();
 
         try {
-            readFile = new FileInputStream(fileToRead);
-            writeFile = new FileOutputStream(fileToAppend, true);
+            readFile = new FileInputStream(fileToRead + ".txt");
+            writeFile = new FileOutputStream(fileToAppend + ".txt", true);
 
-            int c;
+            int c = 0;
             do {
+                System.out.println(c);
                 c = readFile.read();
                 if (c != -1) {
                     writeFile.write((char) c);
