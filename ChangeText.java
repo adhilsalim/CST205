@@ -19,10 +19,15 @@ public class ChangeText implements ActionListener {
         lowerCase = new JRadioButton("lowercase");
         button = new JButton("GO!");
 
+        frame.setSize(500, 600);
+        frame.setVisible(true);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         label.setBounds(10, 10, 400, 200);
         textBox.setBounds(10, 410, 200, 30);
-        upperCase.setBounds(10, 450, 50, 30);
-        lowerCase.setBounds(70, 450, 50, 30);
+        upperCase.setBounds(10, 450, 120, 30);
+        lowerCase.setBounds(120, 450, 120, 30);
         button.setBounds(10, 490, 60, 45);
 
         frame.add(label);
@@ -34,12 +39,6 @@ public class ChangeText implements ActionListener {
         ButtonGroup group = new ButtonGroup();
         group.add(upperCase);
         group.add(lowerCase);
-
-        frame.setSize(500, 600);
-        frame.setVisible(true);
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
     @Override
