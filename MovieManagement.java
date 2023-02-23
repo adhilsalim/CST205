@@ -9,20 +9,8 @@ class MovieDetails {
 }
 
 public class MovieManagement {
-
-    // public void setDetails() {
-
-    // }
-
-    // public void getDetails() {
-
-    // }
-
     public static void main(String[] args) {
 
-        // MovieManagement movieManage = new MovieManagement();
-        // movieManage.setDetails();
-        // movieManage.getDetails();
         Scanner scan = new Scanner(System.in);
 
         System.out.print("ENTER NUMBER OF MOVIES: ");
