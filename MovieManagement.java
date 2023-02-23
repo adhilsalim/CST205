@@ -17,11 +17,14 @@ public class MovieManagement {
 
         Scanner scan = new Scanner(System.in);
 
+        // GETTING NUMBER OF MOVIES
         System.out.print("ENTER NUMBER OF MOVIES: ");
         int total_movies = scan.nextInt();
 
+        // CREATING OBJECTS OF MOVIE DETAILS CLASS
         MovieDetails movie[] = new MovieDetails[total_movies];
 
+        // GETTING MOVIE DETAILS
         for (int i = 0; i < movie.length; i++) {
             movie[i] = new MovieDetails();
 
@@ -35,9 +38,9 @@ public class MovieManagement {
             System.out.print("ENTER CAST NUMBER FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
             int md_castNumber = scan.nextInt();
 
-            for (int j = 0; j < md_castNumber; j++) {
-                movie[i].cast = new String[md_castNumber];
+            movie[i].cast = new String[md_castNumber];
 
+            for (int j = 0; j < md_castNumber; j++) {
                 System.out.print("ENTER CAST " + (j + 1) + " FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
                 movie[i].cast[j] = scan.next();
             }
@@ -46,6 +49,7 @@ public class MovieManagement {
             movie[i].year = scan.nextInt();
         }
 
+        // DISPLAYING MOVIE DETAILS
         for (int i = 0; i < movie.length && movie[i].movieId != -1; i++) {
             System.out.println("\n\nMOVIE ID: " + movie[i].movieId + " MOVIE NAME: " +
                     movie[i].movieName);
