@@ -27,7 +27,8 @@ public class MovieManagement {
         String cast[] = new String[100]; // this is not the exact way to do it
 
         // GETTING MOVIE DETAILS [K IS USED TO STORE CAST]
-        for (int i = 0, k = 0; i < movie.length; i++) {
+        int k = 0;
+        for (int i = 0; i < movie.length; i++) {
             movie[i] = new MovieDetails();
 
             System.out.print("\nENTER MOVIE ID FOR MOVIE " + (i + 1) + ": ");
@@ -45,8 +46,21 @@ public class MovieManagement {
             for (int j = 0; j < md_castNumber; j++) {
                 System.out.print("ENTER CAST " + (j + 1) + " FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
                 movie[i].cast[j] = scan.next();
-                cast[k] = movie[i].cast[j];
-                k++;
+
+                // CHECKING IF CAST IS ALREADY PRESENT
+                Boolean flag = false;
+                for (int c = 0; c < cast.length; c++) {
+                    if (cast[c] != movie[i].cast[j]) {
+                        flag = true;
+                    }
+                }
+
+                // IF CAST IS NOT PRESENT THEN ADD IT TO CAST ARRAY
+                if (flag) {
+                    cast[k] = movie[i].cast[j];
+                    k++;
+                }
+
             }
 
             System.out.print("ENTER YEAR FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
@@ -64,6 +78,20 @@ public class MovieManagement {
             }
 
             System.out.println("MOVIE YEAR: " + movie[i].year);
+        }
+
+        // PRINTING MOVIES WITH SAME CAST
+        System.out.println("\n\nMOVIES WITH SAME CAST: ");
+        for (int i = 0; i <= k; i++) {
+            System.out.println("CAST: " + cast[i]);
+
+            Boolean EXIT_CAST_LOOP = false;
+            for (int j = 0; j < movie.length; j++) {
+                for (int c = 0; c < movie[j].cast.length && !EXIT_CAST_LOOP; c++)
+                    if (cast[i] == movie[j].cast[c])
+                        System.out.println("MOVIE: " + movie[j].movieName);
+                EXIT_CAST_LOOP = true;
+            }
         }
 
         scan.close();
