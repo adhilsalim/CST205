@@ -7,28 +7,31 @@ public class FileAppend {
 
         Scanner scan = new Scanner(System.in);
 
-        FileInputStream fin;
-        FileOutputStream fout;
+        FileInputStream readFile;
+        FileOutputStream writeFile;
 
-        String temp="";
+        String tempOne = "", tempTwo = "";
 
         System.out.println("Enter the name of the file to read [excluding extension]: ");
-        String fRead = scan.nextLine();
+        String fileToRead = scan.nextLine();
 
         System.out.println("Enter the name of the file to append [excluding extension]: ");
-        String fAppend = scan.nextLine();
+        String fileToAppend = scan.nextLine();
 
         scan.close();
 
         try {
-            fin = new FileInputStream(fRead + ".txt");
-            fout = new FileOutputStream(fAppend + ".txt");
+            readFile = new FileInputStream(fileToRead);
+            writeFile = new FileOutputStream(fileToAppend, true);
 
-            int c = fin.read();
-
-          }  
-        catch(Exception err){
-            System.out.println(err.getMessage());
+            int c;
+            do {
+                c = readFile.read();
+                if (c != -1) {
+                    writeFile.write((char) c);
+                }
+            } while (c != -1);
+        } catch (Exception e) {
         }
 
     }
