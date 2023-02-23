@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 class Errors {
 
@@ -22,7 +21,10 @@ class Errors {
 
       if (age < 18) {
         throw new ArithmeticException("[ERR]Age must be greater than 18");
+        // throw new Exception("exception details");
       }
+      // the below sout will only work if there is no exception, otherwise it the
+      // program flow goes to the catch
       System.out.println("Age: " + age);
 
     } catch (ArithmeticException err) {
