@@ -11,13 +11,12 @@ class MovieDetails {
 public class MovieManagement {
 
     Scanner scan = new Scanner(System.in);
+    System.out.print("ENTER NUMBER OF MOVIES: ");
+    int total_movies = scan.nextInt();
+
+    MovieDetails movie[] = new MovieDetails[total_movies];
 
     public void setDetails() {
-        System.out.print("ENTER NUMBER OF MOVIES: ");
-        int total_movies = scan.nextInt();
-
-        MovieDetails movie[] = new MovieDetails[total_movies];
-
         for (int i = 0; i < movie.length; i++) {
             System.out.print("ENTER MOVIE ID: ");
             movie[i].movieId = scan.nextInt();
@@ -37,6 +36,12 @@ public class MovieManagement {
             movie[i].year = scan.nextInt();
         }
     }
+
+    // public void getDetails() {
+    //     for (int i = 0; i < movie.length; i++) {
+
+    //     }
+    // }
 
     public static void main(String[] args) {
 
