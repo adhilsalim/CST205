@@ -6,6 +6,12 @@ class MovieDetails {
     String movieName;
     String cast[];
     int year;
+    MovieDetails md;
+
+    MovieDetails getMovieObjet() {
+        md = new MovieDetails();
+        return md;
+    }
 }
 
 public class MovieManagement {
@@ -13,17 +19,17 @@ public class MovieManagement {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        MovieDetails md = new MovieDetails();
+        MovieDetails mdObject;
 
         System.out.print("ENTER NUMBER OF MOVIES: ");
         int total_movies = scan.nextInt();
 
         MovieDetails movie[] = new MovieDetails[total_movies];
-        MovieDetails md;
 
         for (int i = 0; i < movie.length; i++) {
 
-            md = new MovieDetails();
-            movie[i] = md;
+            mdObject = md.getMovieObjet();
 
             System.out.print("ENTER MOVIE ID: ");
             movie[i].movieId = scan.nextInt();
