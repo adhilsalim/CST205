@@ -16,8 +16,8 @@ class FileCopy {
         String writeTo = scan.nextLine();
 
         // Removing the .txt extension from the file names if the user entered it
-        readFrom = readFrom.replace(".txt", "");
-        writeTo = writeTo.replace(".txt", "");
+        readFrom = readFrom.replaceAll(".txt", "");
+        writeTo = writeTo.replaceAll(".txt", "");
 
         // Closing the scanner
         scan.close();
