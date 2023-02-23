@@ -9,6 +9,7 @@ class MovieDetails {
 }
 
 public class MovieManagement {
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
@@ -17,8 +18,13 @@ public class MovieManagement {
         int total_movies = scan.nextInt();
 
         MovieDetails movie[] = new MovieDetails[total_movies];
+        MovieDetails md;
 
         for (int i = 0; i < movie.length; i++) {
+
+            md = new MovieDetails();
+            movie[i] = md;
+
             System.out.print("ENTER MOVIE ID: ");
             movie[i].movieId = scan.nextInt();
 
