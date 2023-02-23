@@ -24,8 +24,10 @@ public class MovieManagement {
         // CREATING OBJECTS OF MOVIE DETAILS CLASS
         MovieDetails movie[] = new MovieDetails[total_movies];
 
-        // GETTING MOVIE DETAILS
-        for (int i = 0; i < movie.length; i++) {
+        String cast[] = new String[100]; // this is not the exact way to do it
+
+        // GETTING MOVIE DETAILS [K IS USED TO STORE CAST]
+        for (int i = 0, k = 0; i < movie.length; i++) {
             movie[i] = new MovieDetails();
 
             System.out.print("\nENTER MOVIE ID FOR MOVIE " + (i + 1) + ": ");
@@ -43,6 +45,8 @@ public class MovieManagement {
             for (int j = 0; j < md_castNumber; j++) {
                 System.out.print("ENTER CAST " + (j + 1) + " FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
                 movie[i].cast[j] = scan.next();
+                cast[k] = movie[i].cast[j];
+                k++;
             }
 
             System.out.print("ENTER YEAR FOR MOVIE " + (movie[i].movieName).toUpperCase() + ": ");
