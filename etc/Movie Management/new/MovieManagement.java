@@ -91,7 +91,8 @@ public class MovieManagement {
         }
 
         // OPTIONS
-        System.out.println("\n1. DISPLAY MOVIE DETAILS");
+        System.out.println("\nOPTIONS");
+        System.out.println("1. DISPLAY MOVIE DETAILS");
         System.out.println("2. DELETE MOVIE BASED ON MOVIE ID");
         System.out.println("3. SORT MOVIE DETAILS BASED ON MOVIE YEAR");
         System.out.println("4. DISPLAY THEATRE DETAILS");
@@ -99,41 +100,39 @@ public class MovieManagement {
         System.out.println("6. DISPLAY MOVIES WITH SAME CAST");
         System.out.println("7. EXIT");
 
-        int option = 0;
-        while (option != 7) {
-            System.out.print("\nENTER OPTION : ");
-            option = scan.nextInt();
+        // GETTING OPTION
+        System.out.print("ENTER OPTION : ");
+        int option = scan.nextInt();
 
-            switch (option) {
-                case 1:
-                    mm.displayMovieDetails();
-                    break;
-                case 2:
-                    System.out.print("ENTER MOVIE ID TO DELETE : ");
-                    int movieId = scan.nextInt();
-                    mm.deleteMovie(movieId);
-                    break;
-                case 3:
-                    mm.sortMovieDetails();
-                    break;
-                case 4:
-                    mm.displayTheatreDetails();
-                    break;
-                case 5:
-                    System.out.print("ENTER THEATRE ID TO DELETE : ");
-                    int theatreId = scan.nextInt();
-                    mm.deleteTheatre(theatreId);
-                    break;
-                case 6:
-                    mm.displayMoviesWithSameCast();
-                    break;
-                case 7:
-                    System.out.println("EXITING...");
-                    break;
-                default:
-                    System.out.println("INVALID OPTION");
-                    break;
-            }
+        switch (option) {
+            case 1:
+                mm.displayMovieDetails();
+                break;
+            case 2:
+                System.out.print("ENTER MOVIE ID TO DELETE : ");
+                int movieId = scan.nextInt();
+                mm.deleteMovie(movieId);
+                break;
+            case 3:
+                mm.sortMovieDetails();
+                break;
+            case 4:
+                mm.displayTheatreDetails();
+                break;
+            case 5:
+                System.out.print("ENTER THEATRE ID TO DELETE : ");
+                int theatreId = scan.nextInt();
+                mm.deleteTheatre(theatreId);
+                break;
+            case 6:
+                mm.displayMoviesWithSameCast();
+                break;
+            case 7:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("INVALID OPTION");
+                break;
         }
 
         scan.close();
@@ -199,6 +198,24 @@ public class MovieManagement {
                         System.out.println("MOVIE NAME : " + md.movieName);
                         System.out.println("MOVIE CAST : " + Arrays.toString(md.cast));
                         System.out.println("MOVIE YEAR : " + md.year);
+                    }
+                }
+            }
+        }
+    }
+
+    // DISPLAY THEATRE NAME WITH SAME CAST
+    public void displayTheatreNameWithSameCast() {
+        for (TheatreDetails td : theatreList) {
+            for (TheatreDetails td1 : theatreList) {
+                if (td.theatreId != td1.theatreId) {
+                    if (Arrays.equals(td.movie.cast, td1.movie.cast)) {
+                        System.out.println("THEATRE ID : " + td.theatreId);
+                        System.out.println("THEATRE NAME : " + td.theatreName);
+                        System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
+                        System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
+                        System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
+                        System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
                     }
                 }
             }
