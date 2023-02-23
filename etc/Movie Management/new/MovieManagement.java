@@ -15,6 +15,7 @@ public class MovieManagement {
 
         Scanner scan = new Scanner(System.in);
         MovieDetails md;
+        MovieManagement mm = new MovieManagement();
 
         // GETTING NUMBER OF MOVIES
         System.out.print("ENTER NUMBER OF MOVIES: ");
@@ -37,6 +38,7 @@ public class MovieManagement {
 
             for (int j = 0; j < md_castNumber; j++) {
                 System.out.print("ENTER CAST " + (j + 1) + " FOR MOVIE : ");
+                scan.nextLine();
                 md.cast[j] = scan.nextLine();
             }
 
@@ -45,7 +47,16 @@ public class MovieManagement {
 
             movieList.add(md);
         }
-
+        mm.displayMovieDetails();
         scan.close();
+    }
+
+    public void displayMovieDetails() {
+        for (MovieDetails md : movieList) {
+            System.out.println("MOVIE ID : " + md.movieId);
+            System.out.println("MOVIE NAME : " + md.movieName);
+            System.out.println("MOVIE CAST : " + Arrays.toString(md.cast));
+            System.out.println("MOVIE YEAR : " + md.year);
+        }
     }
 }
