@@ -13,22 +13,30 @@ public class CalculateSumGUI implements ActionListener {
 
         frame = new JFrame("Calculate Sum");
         labelOne = new JLabel("Enter number one:");
-        labelTwo = new JLabel("Enter number two");
+        labelTwo = new JLabel("Enter number two:");
         labelThree = new JLabel("Result:");
         tNumberOne = new JTextField();
         tNUmberTwo = new JTextField();
         tResult = new JTextField();
-        bSum = new JButton();
+        bSum = new JButton("SUM");
 
         frame.add(labelOne);
-        frame.add(labelTwo);
-        frame.add(labelThree);
         frame.add(tNumberOne);
+        frame.add(labelTwo);
         frame.add(tNUmberTwo);
+        frame.add(labelThree);
         frame.add(tResult);
         frame.add(bSum);
 
-        frame.setLayout(new FlowLayout(0, 10, 10));
+        labelOne.setBounds(10, 10, 200, 30);
+        tNumberOne.setBounds(10, 40, 100, 30);
+        labelTwo.setBounds(10, 80, 200, 30);
+        tNUmberTwo.setBounds(10, 110, 100, 30);
+        labelThree.setBounds(10, 160, 100, 30);
+        tResult.setBounds(10, 190, 100, 30);
+        bSum.setBounds(10, 250, 100, 50);
+
+        frame.setLayout(null);
         frame.setSize(500, 500);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
