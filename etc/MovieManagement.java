@@ -86,11 +86,14 @@ public class MovieManagement {
             System.out.println("CAST: " + cast[i]);
 
             Boolean EXIT_CAST_LOOP = false;
+
             for (int j = 0; j < movie.length; j++) {
                 for (int c = 0; c < movie[j].cast.length && !EXIT_CAST_LOOP; c++)
-                    if (cast[i] == movie[j].cast[c])
+                    if (cast[i] == movie[j].cast[c]) {
                         System.out.println("MOVIE: " + movie[j].movieName);
-                EXIT_CAST_LOOP = true;
+                        EXIT_CAST_LOOP = true;
+                    }
+
             }
         }
 
