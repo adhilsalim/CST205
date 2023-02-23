@@ -15,7 +15,7 @@ class CountCharacter {
 
         // Getting character to be searched
         System.out.print("Enter character to search: ");
-        key = scan.nextLine().charAt(0);
+        key = scan.next().charAt(0);
 
         // Closing scanner
         scan.close();
