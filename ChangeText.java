@@ -25,6 +25,7 @@ public class ChangeText implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         label.setBounds(10, 10, 400, 200);
+        // label.setFont(new Font("Verdana", Font.BOLD, 18));
         textBox.setBounds(10, 410, 200, 30);
         upperCase.setBounds(10, 450, 120, 30);
         lowerCase.setBounds(140, 450, 120, 30);
