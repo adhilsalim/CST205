@@ -9,10 +9,10 @@ class MovieDetails {
 }
 
 public class MovieManagement {
-    public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
 
+    public void setDetails() {
         System.out.print("ENTER NUMBER OF MOVIES: ");
         int total_movies = scan.nextInt();
 
@@ -36,7 +36,12 @@ public class MovieManagement {
             System.out.print("ENTER MOVIE YEAR: ");
             movie[i].year = scan.nextInt();
         }
+    }
 
-        scan.close();
+    public static void main(String[] args) {
+
+        MovieManagement movieManage = new MovieManagement();
+        movieManage.setDetails();
+        // scan.close();
     }
 }
