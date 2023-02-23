@@ -34,33 +34,6 @@ public class MovieManagement {
 
         MovieManagement mm = new MovieManagement();
 
-        // GETTING NUMBER OF THEATRES
-        System.out.print("ENTER NUMBER OF THEATRES: ");
-        int total_theatres = scan.nextInt();
-
-        for (int i = 0; i < total_theatres; i++) {
-            td = new TheatreDetails();
-
-            System.out.print("\nENTER THEATRE ID FOR THEATRE : ");
-            td.theatreId = scan.nextInt();
-
-            scan.nextLine();
-            System.out.print("ENTER NAME FOR THEATRE : ");
-            td.theatreName = scan.nextLine();
-
-            System.out.print("ENTER MOVIE ID FOR THEATRE : ");
-            int td_movieId = scan.nextInt();
-
-            td.movie = new MovieDetails();
-            for (MovieDetails md1 : movieList) {
-                if (md1.movieId == td_movieId) {
-                    td.movie = md1;
-                }
-            }
-
-            theatreList.add(td);
-        }
-
         // GETTING NUMBER OF MOVIES
         System.out.print("ENTER NUMBER OF MOVIES: ");
         int total_movies = scan.nextInt();
@@ -88,6 +61,33 @@ public class MovieManagement {
             System.out.println("ENTER YEAR OF RELEASE FOR MOVIE : ");
             md.year = scan.nextInt();
             movieList.add(md);
+        }
+
+        // GETTING NUMBER OF THEATRES
+        System.out.print("ENTER NUMBER OF THEATRES: ");
+        int total_theatres = scan.nextInt();
+
+        for (int i = 0; i < total_theatres; i++) {
+            td = new TheatreDetails();
+
+            System.out.print("\nENTER THEATRE ID FOR THEATRE : ");
+            td.theatreId = scan.nextInt();
+
+            scan.nextLine();
+            System.out.print("ENTER NAME FOR THEATRE : ");
+            td.theatreName = scan.nextLine();
+
+            System.out.print("ENTER MOVIE ID FOR THEATRE : ");
+            int td_movieId = scan.nextInt();
+
+            td.movie = new MovieDetails();
+            for (MovieDetails md1 : movieList) {
+                if (md1.movieId == td_movieId) {
+                    td.movie = md1;
+                }
+            }
+
+            theatreList.add(td);
         }
 
         // OPTIONS
