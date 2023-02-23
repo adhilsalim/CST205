@@ -18,7 +18,7 @@ class MovieDetails {
 class TheatreDetails {
     int theatreId;
     String theatreName;
-    MovieDetails movie;
+    Integer movie[];
 }
 
 public class MovieManagement {
@@ -60,6 +60,7 @@ public class MovieManagement {
 
             System.out.println("ENTER YEAR OF RELEASE FOR MOVIE : ");
             md.year = scan.nextInt();
+
             movieList.add(md);
         }
 
@@ -80,11 +81,11 @@ public class MovieManagement {
             System.out.print("ENTER MOVIE ID FOR THEATRE : ");
             int td_movieId = scan.nextInt();
 
-            td.movie = new MovieDetails();
-            for (MovieDetails md1 : movieList) {
-                if (md1.movieId == td_movieId) {
-                    td.movie = md1;
-                }
+            td.movie = new Integer[td_movieId];
+            for (int j = 0; j < td_movieId; j++) {
+                System.out.print("ENTER MOVIE ID " + (j + 1) + " FOR THEATRE : ");
+                // scan.nextLine();
+                td.movie[j] = scan.nextInt();
             }
 
             theatreList.add(td);
@@ -172,10 +173,7 @@ public class MovieManagement {
         for (TheatreDetails td : theatreList) {
             System.out.println("THEATRE ID : " + td.theatreId);
             System.out.println("THEATRE NAME : " + td.theatreName);
-            System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
-            System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
-            System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
-            System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
+            System.out.println("THEATRE MOVIE : " + Arrays.toString(td.movie));
         }
     }
 
@@ -210,15 +208,18 @@ public class MovieManagement {
         System.out.print("ENTER CAST NAME : ");
         String castName = scan.next();
 
-        for (TheatreDetails td : theatreList) {
-            for (String cast : td.movie.cast) {
+        for (MovieDetails md : movieList) {
+            for (String cast : md.cast) {
                 if (cast.equals(castName)) {
-                    System.out.println("THEATRE ID : " + td.theatreId);
-                    System.out.println("THEATRE NAME : " + td.theatreName);
-                    System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
-                    System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
-                    System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
-                    System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
+                    for (TheatreDetails td : theatreList) {
+                        for (Integer movie : td.movie) {
+                            if (movie == md.movieId) {
+                                System.out.println("THEATRE ID : " + td.theatreId);
+                                System.out.println("THEATRE NAME : " + td.theatreName);
+                                System.out.println("THEATRE MOVIE : " + Arrays.toString(td.movie));
+                            }
+                        }
+                    }
                 }
             }
         }
