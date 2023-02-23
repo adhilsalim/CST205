@@ -99,10 +99,10 @@ public class MovieManagement {
         System.out.println("7. EXIT");
 
         // GETTING OPTION
-        System.out.print("ENTER OPTION : ");
-        int option = scan.nextInt();
         Boolean EXIT_LOOP = false;
         while (!EXIT_LOOP) {
+            System.out.print("ENTER OPTION : ");
+            int option = scan.nextInt();
 
             switch (option) {
                 case 1:
