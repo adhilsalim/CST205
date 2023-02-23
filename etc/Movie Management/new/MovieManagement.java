@@ -89,8 +89,53 @@ public class MovieManagement {
             md.year = scan.nextInt();
             movieList.add(md);
         }
-        mm.displayMovieDetails();
-        mm.deleteMovie(2);
+
+        // OPTIONS
+        System.out.println("\n1. DISPLAY MOVIE DETAILS");
+        System.out.println("2. DELETE MOVIE BASED ON MOVIE ID");
+        System.out.println("3. SORT MOVIE DETAILS BASED ON MOVIE YEAR");
+        System.out.println("4. DISPLAY THEATRE DETAILS");
+        System.out.println("5. DELETE THEATRE BASED ON THEATRE ID");
+        System.out.println("6. DISPLAY MOVIES WITH SAME CAST");
+        System.out.println("7. EXIT");
+
+        int option = 0;
+        while (option != 7) {
+            System.out.print("\nENTER OPTION : ");
+            option = scan.nextInt();
+
+            switch (option) {
+                case 1:
+                    mm.displayMovieDetails();
+                    break;
+                case 2:
+                    System.out.print("ENTER MOVIE ID TO DELETE : ");
+                    int movieId = scan.nextInt();
+                    mm.deleteMovie(movieId);
+                    break;
+                case 3:
+                    mm.sortMovieDetails();
+                    break;
+                case 4:
+                    mm.displayTheatreDetails();
+                    break;
+                case 5:
+                    System.out.print("ENTER THEATRE ID TO DELETE : ");
+                    int theatreId = scan.nextInt();
+                    mm.deleteTheatre(theatreId);
+                    break;
+                case 6:
+                    mm.displayMoviesWithSameCast();
+                    break;
+                case 7:
+                    System.out.println("EXITING...");
+                    break;
+                default:
+                    System.out.println("INVALID OPTION");
+                    break;
+            }
+        }
+
         scan.close();
     }
 
@@ -121,5 +166,42 @@ public class MovieManagement {
                 return md1.year - md2.year;
             }
         });
+    }
+
+    // DISPLAY THEATRE DETAILS
+    public void displayTheatreDetails() {
+        for (TheatreDetails td : theatreList) {
+            System.out.println("THEATRE ID : " + td.theatreId);
+            System.out.println("THEATRE NAME : " + td.theatreName);
+            System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
+            System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
+            System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
+            System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
+        }
+    }
+
+    // DELETE THEATRE BASED ON THEATRE ID
+    public void deleteTheatre(int theatreId) {
+        for (TheatreDetails td : theatreList) {
+            if (td.theatreId == theatreId) {
+                theatreList.remove(td);
+            }
+        }
+    }
+
+    // DISPLAY MOVIES WITH SAME CAST
+    public void displayMoviesWithSameCast() {
+        for (MovieDetails md : movieList) {
+            for (MovieDetails md1 : movieList) {
+                if (md.movieId != md1.movieId) {
+                    if (Arrays.equals(md.cast, md1.cast)) {
+                        System.out.println("MOVIE ID : " + md.movieId);
+                        System.out.println("MOVIE NAME : " + md.movieName);
+                        System.out.println("MOVIE CAST : " + Arrays.toString(md.cast));
+                        System.out.println("MOVIE YEAR : " + md.year);
+                    }
+                }
+            }
+        }
     }
 }
