@@ -7,11 +7,6 @@ class MovieDetails {
     String cast[];
     int year;
     MovieDetails md;
-
-    MovieDetails getMovieObjet() {
-        md = new MovieDetails();
-        return md;
-    }
 }
 
 public class MovieManagement {
@@ -19,17 +14,18 @@ public class MovieManagement {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        MovieDetails md = new MovieDetails();
-        MovieDetails mdObject;
 
         System.out.print("ENTER NUMBER OF MOVIES: ");
         int total_movies = scan.nextInt();
 
         MovieDetails movie[] = new MovieDetails[total_movies];
 
-        for (int i = 0; i < movie.length; i++) {
+        MovieDetails md1 = new MovieDetails();
+        MovieDetails md2 = new MovieDetails();
+        movie[0] = md1;
+        movie[1] = md2;
 
-            mdObject = md.getMovieObjet();
+        for (int i = 0; i < movie.length; i++) {
 
             System.out.print("ENTER MOVIE ID: ");
             movie[i].movieId = scan.nextInt();
