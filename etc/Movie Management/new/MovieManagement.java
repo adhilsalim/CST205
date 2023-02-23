@@ -188,20 +188,21 @@ public class MovieManagement {
         }
     }
 
-    // DISPLAY MOVIES WITH SAME CAST
+    // DISPLAY MOVIE NAME FOR EACH CAST
     public void displayMoviesWithSameCast() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("ENTER CAST NAME : ");
+        String castName = scan.next();
+
         for (MovieDetails md : movieList) {
-            for (MovieDetails md1 : movieList) {
-                if (md.movieId != md1.movieId) {
-                    if (Arrays.equals(md.cast, md1.cast)) {
-                        System.out.println("MOVIE ID : " + md.movieId);
-                        System.out.println("MOVIE NAME : " + md.movieName);
-                        System.out.println("MOVIE CAST : " + Arrays.toString(md.cast));
-                        System.out.println("MOVIE YEAR : " + md.year);
-                    }
+            for (String cast : md.cast) {
+                if (cast.equals(castName)) {
+                    System.out.println("MOVIE NAME : " + md.movieName);
                 }
             }
         }
+
+        scan.close();
     }
 
     // GET CAST NAME AND DISPLAY THEATRE NAME WITH SAME CAST
