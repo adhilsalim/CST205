@@ -54,7 +54,6 @@ public class MovieManagement {
             md.cast = new String[md_castNumber];
             for (int j = 0; j < md_castNumber; j++) {
                 System.out.print("ENTER CAST " + (j + 1) + " FOR MOVIE : ");
-                // scan.nextLine();
                 md.cast[j] = scan.next();
             }
 
@@ -78,7 +77,7 @@ public class MovieManagement {
             System.out.print("ENTER NAME FOR THEATRE : ");
             td.theatreName = scan.nextLine();
 
-            System.out.print("ENTER MOVIE ID FOR THEATRE : ");
+            System.out.print("ENTER MOVIE NUMBER FOR THEATRE :");
             int td_movieId = scan.nextInt();
 
             td.movie = new Integer[td_movieId];
@@ -104,36 +103,39 @@ public class MovieManagement {
         // GETTING OPTION
         System.out.print("ENTER OPTION : ");
         int option = scan.nextInt();
+        Boolean EXIT_LOOP = false;
+        while (!EXIT_LOOP) {
 
-        switch (option) {
-            case 1:
-                mm.displayMovieDetails();
-                break;
-            case 2:
-                System.out.print("ENTER MOVIE ID TO DELETE : ");
-                int movieId = scan.nextInt();
-                mm.deleteMovie(movieId);
-                break;
-            case 3:
-                mm.sortMovieDetails();
-                break;
-            case 4:
-                mm.displayTheatreDetails();
-                break;
-            case 5:
-                System.out.print("ENTER THEATRE ID TO DELETE : ");
-                int theatreId = scan.nextInt();
-                mm.deleteTheatre(theatreId);
-                break;
-            case 6:
-                mm.displayMoviesWithSameCast();
-                break;
-            case 7:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("INVALID OPTION");
-                break;
+            switch (option) {
+                case 1:
+                    mm.displayMovieDetails();
+                    break;
+                case 2:
+                    System.out.print("ENTER MOVIE ID TO DELETE : ");
+                    int movieId = scan.nextInt();
+                    mm.deleteMovie(movieId);
+                    break;
+                case 3:
+                    mm.sortMovieDetails();
+                    break;
+                case 4:
+                    mm.displayTheatreDetails();
+                    break;
+                case 5:
+                    System.out.print("ENTER THEATRE ID TO DELETE : ");
+                    int theatreId = scan.nextInt();
+                    mm.deleteTheatre(theatreId);
+                    break;
+                case 6:
+                    mm.displayMoviesWithSameCast();
+                    break;
+                case 7:
+                    EXIT_LOOP = true;
+                    break;
+                default:
+                    System.out.println("INVALID OPTION");
+                    break;
+            }
         }
 
         scan.close();
