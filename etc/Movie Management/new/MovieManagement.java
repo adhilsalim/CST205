@@ -3,6 +3,7 @@ import java.util.*;
 /*
  * THIS PROGRAM IS NOT COMPLETE [WORKING ON IT]
  * REFRESH THE PAGE TO SEE THE UPDATED CODE (15 minutes)
+ * ANY ERROR PLEASE REPORT
  */
 
 //MOVIE DETAILS CLASS
@@ -11,7 +12,6 @@ class MovieDetails {
     String movieName;
     String cast[];
     int year;
-    MovieDetails md;
 }
 
 // THEATRE DETAILS CLASS
