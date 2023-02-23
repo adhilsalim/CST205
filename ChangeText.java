@@ -39,10 +39,25 @@ public class ChangeText implements ActionListener {
         ButtonGroup group = new ButtonGroup();
         group.add(upperCase);
         group.add(lowerCase);
+
+        button.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == button) {
+            try {
+                String text = textBox.getText();
+
+                if (upperCase.isSelected() == true) {
+                    label.setText(text.toUpperCase());
+                } else {
+                    label.setText(text.toLowerCase());
+                }
+            } catch (Exception err) {
+
+            }
+        }
 
     }
 
