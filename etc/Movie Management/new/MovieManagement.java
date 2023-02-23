@@ -204,21 +204,25 @@ public class MovieManagement {
         }
     }
 
-    // DISPLAY THEATRE NAME WITH SAME CAST
-    public void displayTheatreNameWithSameCast() {
+    // GET CAST NAME AND DISPLAY THEATRE NAME WITH SAME CAST
+    public void displayTheatreWithSameCast() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("ENTER CAST NAME : ");
+        String castName = scan.next();
+
         for (TheatreDetails td : theatreList) {
-            for (TheatreDetails td1 : theatreList) {
-                if (td.theatreId != td1.theatreId) {
-                    if (Arrays.equals(td.movie.cast, td1.movie.cast)) {
-                        System.out.println("THEATRE ID : " + td.theatreId);
-                        System.out.println("THEATRE NAME : " + td.theatreName);
-                        System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
-                        System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
-                        System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
-                        System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
-                    }
+            for (String cast : td.movie.cast) {
+                if (cast.equals(castName)) {
+                    System.out.println("THEATRE ID : " + td.theatreId);
+                    System.out.println("THEATRE NAME : " + td.theatreName);
+                    System.out.println("THEATRE MOVIE ID : " + td.movie.movieId);
+                    System.out.println("THEATRE MOVIE NAME : " + td.movie.movieName);
+                    System.out.println("THEATRE MOVIE CAST : " + Arrays.toString(td.movie.cast));
+                    System.out.println("THEATRE MOVIE YEAR : " + td.movie.year);
                 }
             }
         }
+
+        scan.close();
     }
 }
