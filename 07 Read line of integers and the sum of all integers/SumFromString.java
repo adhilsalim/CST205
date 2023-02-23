@@ -15,7 +15,7 @@ class SumFromString {
         scan.close();
 
         try {
-            StringTokenizer st = new StringTokenizer(integerString, "+");
+            StringTokenizer st = new StringTokenizer(integerString, "+", false);
 
             // Adding the integers
             while (st.hasMoreTokens()) {
@@ -23,6 +23,19 @@ class SumFromString {
                 System.out.println("Slice: " + slice);
                 sum += Integer.parseInt(slice);
             }
+
+            /*
+             * THIS ALSO SHALL WORK
+             * while (st.hasMoreTokens()) {
+             * String s = String.valueOf(st.nextElement());
+             * System.out.println("Slice: " + s);
+             * sum += Integer.parseInt(s);
+             * }
+             */
+
+            /*
+             * nextElement() returns object while nextToken() returns string
+             */
 
             // Printing the sum
             System.out.println("Sum of " + integerString + " is " + sum);
