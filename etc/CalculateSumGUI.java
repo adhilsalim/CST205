@@ -32,9 +32,11 @@ public class CalculateSumGUI implements ActionListener {
         tNumberOne.setBounds(10, 40, 100, 30);
         labelTwo.setBounds(10, 80, 200, 30);
         tNUmberTwo.setBounds(10, 110, 100, 30);
-        labelThree.setBounds(10, 160, 100, 30);
+        labelThree.setBounds(10, 160, 200, 30);
         tResult.setBounds(10, 190, 100, 30);
         bSum.setBounds(10, 250, 100, 50);
+
+        bSum.addActionListener(this);
 
         frame.setLayout(null);
         frame.setSize(500, 500);
@@ -52,9 +54,10 @@ public class CalculateSumGUI implements ActionListener {
 
                 int s = x + y;
 
+                labelThree.setText("Sum of " + String.valueOf(x) + "+" + String.valueOf(y) + " is:");
                 tResult.setText(String.valueOf(s));
             } catch (Exception err) {
-
+                System.out.println(err);
             }
         }
 
