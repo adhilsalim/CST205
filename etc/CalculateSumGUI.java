@@ -45,6 +45,18 @@ public class CalculateSumGUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == bSum) {
+            try {
+                int x = Integer.parseInt(tNumberOne.getText());
+                int y = Integer.parseInt(tNUmberTwo.getText());
+
+                int s = x + y;
+
+                tResult.setText(String.valueOf(s));
+            } catch (Exception err) {
+
+            }
+        }
 
     }
 
