@@ -46,6 +46,10 @@ public class MovieManagement implements ActionListener {
         f.setLayout(null);
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        f.add(tMovieId);
+        f.add(bGet);
+        f.add(label);
     }
 
     public static void main(String[] args) {
@@ -259,16 +263,15 @@ public class MovieManagement implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bGet) {
             if (tMovieId.getText() != null) {
+                int movieId = Integer.parseInt(tMovieId.getText());
                 String temp = "<html>";
                 for (MovieDetails md : movieList) {
-                    temp.concat("MOVIE ID : " + md.movieId);
-                    temp.concat("<br>");
-                    temp.concat("MOVIE NAME : " + md.movieName);
-                    temp.concat("<br>");
-                    temp.concat("MOVIE CAST : " + Arrays.toString(md.cast));
-                    temp.concat("<br>");
-                    temp.concat("MOVIE YEAR : " + md.year);
-                    temp.concat("<br>");
+                    if (md.movieId == movieId) {
+                        temp = temp.concat("MOVIE ID : " + md.movieId + "<br>");
+                        temp = temp.concat("MOVIE NAME : " + md.movieName + "<br>");
+                        temp = temp.concat("MOVIE CAST : " + Arrays.toString(md.cast) + "<br>");
+                        temp = temp.concat("MOVIE YEAR : " + md.year + "<br>");
+                    }
                 }
                 temp.concat("</html>");
                 label.setText(temp);
