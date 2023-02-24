@@ -39,10 +39,10 @@ public class MovieManagement implements ActionListener {
 
         tMovieId.setBounds(50, 50, 150, 20);
         bGet.setBounds(50, 100, 100, 20);
-        label.setBounds(50, 150, 300, 20);
+        label.setBounds(50, 150, 300, 300);
         bGet.addActionListener(this);
 
-        f.setSize(400, 400);
+        f.setSize(600, 600);
         f.setLayout(null);
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
