@@ -1,4 +1,7 @@
 import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 /*
  * ANY ERROR PLEASE REPORT
@@ -19,9 +22,31 @@ class TheatreDetails {
     Integer movie[];
 }
 
-public class MovieManagement {
+public class MovieManagement implements ActionListener {
     static ArrayList<MovieDetails> movieList = new ArrayList<MovieDetails>();
     static ArrayList<TheatreDetails> theatreList = new ArrayList<TheatreDetails>();
+
+    JFrame f;
+    JTextField tMovieId;
+    JLabel label;
+    JButton bGet;
+
+    public MovieManagement() {
+        f = new JFrame("Movie Management");
+        tMovieId = new JTextField();
+        bGet = new JButton("GET");
+        label = new JLabel();
+
+        tMovieId.setBounds(50, 50, 150, 20);
+        bGet.setBounds(50, 100, 100, 20);
+        label.setBounds(50, 150, 300, 20);
+        bGet.addActionListener(this);
+
+        f.setSize(400, 400);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
     public static void main(String[] args) {
 
@@ -229,5 +254,25 @@ public class MovieManagement {
         }
 
         scan.close();
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == bGet) {
+            if (tMovieId.getText() != null) {
+                String temp = "<html>";
+                for (MovieDetails md : movieList) {
+                    temp.concat("MOVIE ID : " + md.movieId);
+                    temp.concat("<br>");
+                    temp.concat("MOVIE NAME : " + md.movieName);
+                    temp.concat("<br>");
+                    temp.concat("MOVIE CAST : " + Arrays.toString(md.cast));
+                    temp.concat("<br>");
+                    temp.concat("MOVIE YEAR : " + md.year);
+                    temp.concat("<br>");
+                }
+                temp.concat("</html>");
+                label.setText(temp);
+            }
+        }
     }
 }
