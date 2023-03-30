@@ -181,6 +181,7 @@ public class MovieManagement implements ActionListener {
     // DELETE MOVIE BASED ON MOVIE ID
     public void deleteMovie(int movieId) {
         Iterator<MovieDetails> itr = movieList.iterator();
+
         while (itr.hasNext()) {
             MovieDetails md = itr.next();
             if (md.movieId == movieId) {
