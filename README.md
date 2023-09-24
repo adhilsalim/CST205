@@ -16,7 +16,7 @@ CST205 is a course that introduces students to the fundamentals of Object-Orient
 
 1. **Clone the Repository:** To get started, clone this repository to your local machine using the following command:
    ```
-   git clone https://github.com/yourusername/CST205.git
+   git clone https://github.com/adhilsalim/CST205.git
    ```
 
 2. **Explore the Content:** Navigate through the repository folders to access lab exercise solutions and additional programs.
