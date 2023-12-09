@@ -1,33 +1,45 @@
-# CST205 - Object-Oriented Programming with Java
+## CST205: Object-Oriented Programming with Java
 
-Welcome to the CST205 repository! This repository contains solutions to lab exercises and additional Java programs for the "Object-Oriented Programming using Java" course at KTU University.
+This repository contains the programs developed during the CST205 lab sessions.
 
-## About CST205
+### Purpose
 
-CST205 is a course that introduces students to the fundamentals of Object-Oriented Programming (OOP) using the Java programming language. This course covers various OOP concepts, including classes, objects, inheritance, polymorphism, and more. The repository serves as a valuable resource for students to access lab exercise solutions and explore additional Java programs related to the course.
+This repository serves as a central hub for sharing and referencing the lab programs created in CST205. It aims to:
 
-## Key Contents
+- **Facilitate collaboration:** Students can access and share code with each other, enabling better understanding and troubleshooting.
+- **Maintain a record of work:** Programs are preserved for future reference and revision.
+- **Promote learning:** Sharing and reviewing code promotes knowledge exchange and reinforces key concepts.
 
-- **Lab Exercises:** Find solutions to the lab exercises conducted as part of the CST205 course. These solutions can help you understand and practice OOP concepts in Java.
+### Usage
 
-- **Additional Programs:** Explore a collection of additional Java programs that showcase various aspects of OOP, algorithms, and data structures. These programs are designed to supplement your learning and provide practical examples.
+1. **Fork the repository:** This creates your own copy of the code, allowing you to make modifications and contribute your work.
+2. **Clone the repository:** Download your forked copy to your local machine.
+3. **Navigate to the relevant lab session folder.**
+4. **Review and explore the provided programs.**
+5. **Feel free to modify and adapt the code for your own learning or project purposes.**
 
-## Getting Started
+### Contributing
 
-1. **Clone the Repository:** To get started, clone this repository to your local machine using the following command:
-   ```
-   git clone https://github.com/adhilsalim/CST205.git
-   ```
+Contributions are welcome to this repository. Please consider contributing by:
 
-2. **Explore the Content:** Navigate through the repository folders to access lab exercise solutions and additional programs.
+- **Adding programs from your own lab sessions.**
+- **Improving existing code or documentation.**
+- **Reporting any issues or bugs.**
 
-3. **Contribute:** If you have improvements or additional programs to share, feel free to create pull requests. Contributions from students and Java enthusiasts are welcome.
+Before contributing, please review the following guidelines:
 
-## Course Information
+- Ensure your contributions are relevant to the CST205 course.
+- Follow the existing coding style and formatting.
+- Provide clear and concise comments for your code.
+- Open a pull request for your contributions.
 
-- **University:** KTU University
-- **Course Code:** CST205
+### License
 
----
+This repository is licensed under the MIT License. Please refer to the LICENSE file for details.
 
-[KTU University](https://www.ktu.edu.in/)
+### Contact
+
+For any questions or feedback, please feel free to open an issue on the GitHub repository.
+
+> [!IMPORTANT]  
+> This repository is intended for educational purposes only. The provided programs may be incomplete or contain errors. Use them at your own risk and discretion.
